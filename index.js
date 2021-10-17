@@ -10,6 +10,6 @@ const rotaToDoList = require("./routes/rotas.js");
 
 app.use("/todo", rotaToDoList);
 
-const port = 3000;
+const port = 3001;
 
 app.listen(port, () => console.log(`Rodando em http://localhost:${port}`));
