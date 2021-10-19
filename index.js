@@ -1,4 +1,7 @@
-require('dotenv').config();
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+}
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -19,5 +22,4 @@ const rotaToDoList = require("./routes/rotas.js");
 app.use("/todo", rotaToDoList);
 
 const port = 3001;
-
-app.listen(port, () => console.log(`Rodando em http://localhost:${port}`));
+app.listen(process.env.PORT || port, () => console.log(`Rodando em http://localhost:${port}`));
